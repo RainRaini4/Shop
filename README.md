@@ -1,5 +1,9 @@
 # Project-shop
 
+A copy of a real project that I freelanced. With the consent of the customer, I changed the subject of the site and post it as an example of my work.
+
+https://user-images.githubusercontent.com/83559408/190662746-71bb9746-aa7f-44c0-b86a-9a3f8dd5d2a0.mp4
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
 ## Development server
@@ -25,3 +29,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
