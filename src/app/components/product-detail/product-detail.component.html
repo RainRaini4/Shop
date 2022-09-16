@@ -1,0 +1,31 @@
+<div *ngIf="!notFound" class="row" style="margin: 0">
+  <div class="text-center-less-xxl col-xxl-5 px-7">
+    <app-header></app-header>
+    <P class="first-p big-text mt-10"><img [src]="product?.iconPath" style="height: 60px; width: 60px; margin-right: 10px;">{{product?.name}}</P>
+    <P class="text-small-secondary h3" style="font-weight: initial">
+      {{product?.description}}
+    </P>
+    <div class="row main-btn-row" style="margin-top: 32px;">
+      <div class="product-btn col-xxl-auto"><a type="button" class="btn btn-primary btn-xl" (click)="scroll(target)">Purchase Now</a></div>
+      <div class="forum-btn col-xxl-auto"><a type="button" class="btn btn-secondary btn-xl" href="">Learn More...</a></div>
+    </div>
+  </div>
+  <div class="col-xxl-7 d-none d-xxl-block" style="padding: 0">
+    <app-big-picture [setImageList]="product?.imagePath"></app-big-picture>
+  </div>
+
+  <div class="mt-10 px-7" *ngIf="product?.imagePath" >
+    <app-carousel [setImageList]="product?.imagePath" class="d-xxl-none"></app-carousel>
+  </div>
+
+  <div class="mt-10" #target>
+    <P class="big-text" style="text-align: center">Simple and Affordable Pricing</P>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="col-xxl-4" *ngFor="let priceData of product?.priceData">
+      <app-price-card [priceData]="priceData"></app-price-card>
+    </div>
+  </div>
+</div>
+
+<app-error-page *ngIf="notFound"></app-error-page>

@@ -1,0 +1,25 @@
+<div class="row m-0">
+  <div class="col-xxl-5 px-7">
+    <app-header class="p-0"></app-header>
+    <P class="display-5 mt-10" style="font-weight: bold"> Available for acceleration </P>
+
+    <a class="card text-white bg-secondary col text-decoration-none" style="margin-top: 5px" *ngFor="let product of products"
+         (mouseenter)="selectedImgPath = product.imagePath[0]; cdref.detectChanges();"
+         [routerLink]="['/product', product.propertyName]">
+      <div class="card-body card-hover" style="cursor: pointer;">
+        <div style="display:flex; min-width: 0; flex: 0 0 25px">
+          <div><img class="ratio ratio-1x1" [src]="product.iconPath" style="height: 60px; width: 60px; margin-right: 10px; margin-top: 10px" alt=""></div>
+          <div style="min-width: 0;">
+            <P class="card-title h3">{{product.name}}</P>
+            <P class="card-text text-ellipsis">{{product.description}}</P>
+          </div>
+          <i class="bi bi-caret-right-fill" style="align-self: center; height: 100%; opacity: 0.5; margin-left: auto"></i>
+        </div>
+      </div>
+    </a>
+
+  </div>
+  <div class="col-xxl-7 d-none d-xxl-block" style="padding: 0">
+    <app-big-picture [setImageList]="imageList" [changeImgByPropName]="selectedImgPath"></app-big-picture>
+  </div>
+</div>

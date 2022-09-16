@@ -1,0 +1,17 @@
+<div class="card text-white bg-dark border-dark col" style="margin: 5px 12px">
+  <div class="card-header p-6 pb-3 p-sm-10 pb-sm-6">
+    <P class="subscription bg-primary text-bright px-6 py-2 mb-3">{{priceData?.subscriptionTime}} {{priceData?.timeUnit ? priceData?.timeUnit : 'MONTH' | uppercase}} SUBSCRIPTION </P>
+    <P class="text-bright display-1" style="font-weight: bold">{{priceData?.priceUnit ? priceData?.priceUnit : '$'}}{{priceData?.price | currency:'':''}} </P>
+    <P class="m-0 opacity-75 text-4" >A one-time purchase for a {{priceData?.subscriptionTime}} {{priceData?.timeUnit ? priceData?.timeUnit : 'Month' | titlecase}} Subscription.</P>
+  </div>
+  <div class="flex px-6 py-0 p-sm-10 py-sm-3">
+    <div *ngIf="priceData?.additionalData && priceData?.additionalData!.length > 0">
+      <P *ngFor="let additionalText of priceData?.additionalData" class="text-5 my-5" style="opacity: 0.7">
+        <i class="bi bi-check-circle-fill" style="margin-right: 10px"></i>{{additionalText}}
+      </P>
+    </div>
+  </div>
+  <div class="card-footer px-6 py-3 p-sm-10 py-sm-6">
+    <a class="btn btn-primary btn-price-card" style="width: 100%" [href]="priceData?.payUrl">Purchase Now</a>
+  </div>
+</div>

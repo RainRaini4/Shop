@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-xxl navbar-dark text-center">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active">
+      <img style="width: 170px; height: 30px" [src]="'assets/images/logo.svg'" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" (click)="c.toggle()" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list text-5"></i>
+    </button>
+    <div #c="ngbCollapse" [ngbCollapse]="true" class="collapse navbar-collapse" style="margin-left: 1rem">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link header-nav-link" aria-current="page" routerLink="/products" routerLinkActive="active">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link header-nav-link" aria-current="page" routerLinkActive="active" style="cursor: pointer" href="">Community</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
